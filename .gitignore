@@ -1,0 +1,74 @@
+node_modules
+/app/vendor
+/app/bower_components
+dist
+.tmp
+.sass-cache
+app/bower_components
+/dist
+/docs
+/report
+/temp
+
+# List below is based on files from:
+# https://github.com/github/gitignore
+
+# Extensions to ignore
+*.diff
+*.err
+*.orig
+*.log
+
+# Archive extensions
+*.7z
+*.jar
+*.rar
+*.zip
+*.gz
+*.bzip
+*.bz2
+*.xz
+*.lzma
+
+# Packing-only extensions
+*.iso
+*.tar
+
+# Package management extensions
+*.dmg
+*.xpi
+*.gem
+*.egg
+*.deb
+*.rpm
+
+# Node.js
+node_modules
+
+#IntelliJ Editors (Webstorm, PyCharm, etc.)
+*.iml
+*.ipr
+*.iws
+.idea/
+.idea/*.*
+
+# Windows OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Mac OS X
+/app/.DS_Store
+.DS_Store
+/app/.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+*~
+

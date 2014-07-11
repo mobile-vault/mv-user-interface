@@ -1,0 +1,67 @@
+<form class="form-horizontal" id="vpnForm" role="form" method="POST">
+    <div class="form-group" id="vpnNameDiv">
+        <label for="vpnName" class="col-sm-offset-1 col-sm-3 control-label">Name: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="vpnName" placeholder="VPN Name">
+            <span class="display-none" id="vpnNameError"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="vpnType" class="col-sm-offset-1 col-sm-3 control-label">Type: </label>
+        <div class="col-sm-4">
+            <select class="form-control" id="vpnType">
+                <option value="PPTP">PPTP</option>
+                <option value="L2TP_IPSEC_PSK">L2TP/IPSec PSK</option>
+                <option value="L2TP_IPSEC">L2TP/IPSec RSA</option>
+                <option value="IPSEC_XAUTH_PSK">IPSec Xauth PSK</option>
+                <option value="IPSEC_XAUTH_RSA">IPSec Xauth RSA</option>
+                <option value="IPSEC_HYBRID_RSA">IPSec Hybrid RSA</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group" id="serverAddressDiv">
+        <label for="serverAddress" class="col-sm-offset-1 col-sm-3 control-label">Server Address: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="serverAddress" placeholder="Server Address">
+            <input type="hidden" id="model-cid" value="">
+            <span class="display-none" id="serverAddressError"></span>
+        </div>
+    </div>
+    <div id="selectDependentDiv"></div>
+    <div class="form-group">
+        <div class="col-sm-offset-5 col-sm-4 showAdvancedOptions">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="showAdvancedOptions" > Show Advanced Options
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="advancedOptions display-none">
+        <div class="form-group">
+            <label for="dnsSearchDomains" class="col-sm-offset-1 col-sm-3 control-label">DNS Search Domains: </label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="dnsSearchDomains" placeholder="DNS Search Domains">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="dnsServers" class="col-sm-offset-1 col-sm-3 control-label">DNS Servers (e.g. 7.7.7.7) </label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="dnsServers" placeholder="DNS Servers">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="forwardingRoutes" class="col-sm-offset-1 col-sm-3 control-label">Forwarding Routes (e.g. 7.0.0.0/8) </label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="forwardingRoutes" placeholder="Forwarding Routes">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-5 col-sm-4">
+            <button type="submit" id="saveVPNProfile" class="btn btn-primary">Save VPN Profile</button>
+        </div>
+    </div>
+</form>
+
+

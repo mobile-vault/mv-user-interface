@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-sm-offset-9 col-sm-3">
+        <button type="button" id="backToWifiList" class="btn btn-warning">Back to Wi-Fi List</button>
+    </div>
+</div>
+
+<form class="form-horizontal" id="wifiForm" role="form" method="POST">
+    <div class="form-group" id="networkDiv">
+        <label for="networkName" class="col-sm-offset-1 col-sm-3 control-label">SSID: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="networkName" placeholder="SSID">
+            <span class="display-none" id="networkError"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="security" class="col-sm-offset-1 col-sm-3 control-label">Security: </label>
+        <div class="col-sm-4">
+            <select class="form-control" id="security">
+                <option value="None">None</option>
+                <option value="WEP">WEP</option>
+                <option value="PSK">PSK</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group display-none" id="passwordDiv">
+        <label for="password" class="col-sm-offset-1 col-sm-3 control-label">Password: </label>
+        <div class="col-sm-4">
+            <input type="password" class="form-control" id="password" placeholder="Password">
+            <span class="display-none" id="passwordError"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="autoJoin" class="col-sm-offset-1 col-sm-3 control-label">Auto Join: </label>
+        <div class="col-sm-1">
+            <input type="checkbox" id="autoJoin">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="hiddenNetwork" class="col-sm-offset-1 col-sm-3 control-label">Hidden Network: </label>
+        <div class="col-sm-1">
+            <input type="checkbox" id="hiddenNetwork">
+            <input type="hidden" id="model-cid" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-5 col-sm-3">
+            <button type="submit" id="saveWiFi" class="btn btn-primary">Save Wi-Fi Settings</button>
+        </div>
+    </div>
+</form>
+

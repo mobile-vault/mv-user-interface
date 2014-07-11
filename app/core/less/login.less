@@ -1,0 +1,62 @@
+// Login Panel Styles
+// -------------------
+.login {
+  @controlHeight: ceil(1.4 * @font-size-base);
+
+  background-color: #FFF;
+  float:none;
+  padding: 15px;
+  margin: auto;
+  margin-top: 10%;
+  margin-bottom: 1em;
+  border: 1px solid #D5D5D5;
+
+  FORM {
+    margin: 10px 0;
+  }
+
+  .form-group LABEL {
+    display: none;
+  }
+
+  .logo {
+    text-align: center;
+    IMG {
+      height: 75px;
+    }
+  }
+
+  .brand {
+    text-align:center;
+    margin-bottom: 0.5em;
+    font-size: ceil(@font-size-base * 2.25);
+  }
+
+  .controls INPUT {
+    position: relative;
+    font-size: @controlHeight;
+    height: 44px;
+  }
+
+  hr {
+    border-top: 1px solid darken(@navbar-default-bg, 7.5%);
+    border-bottom: 1px solid @navbar-default-bg;
+  }
+
+}
+
+// CSS3 Styles
+// Filtered by Modernizr
+// ----------------------
+.boxshadow .login {
+  border-color: none;
+  .box-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
+}
+
+.borderradius .login {
+  @thisRadius: 5px;
+  .border-radius( @thisRadius );
+}
+.cssgradients .login {
+  #gradient > .vertical(@navbar-default-bg, darken(@navbar-default-bg, 5%));
+}

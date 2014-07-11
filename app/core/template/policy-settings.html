@@ -1,0 +1,72 @@
+<div class="row page-header ">
+    <div class="col-sm-7">
+        <h2 class="policies-header">Settings</h2>
+    </div>
+    <div class="col-sm-5">
+        <div class="pull-right object-legend"><span class="object"><i class="fa <% if(app.object_type === 'Company') print('fa-building-o'); else if(app.object_type === 'User') print ('fa-user'); else print ('fa-users'); %>"></i> <%= app.object_type %></span>: <span><%= app.name %></span></span></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container settings-container">
+            <div class="sub-policy-content-container">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="background_data" data-attr = "enable_background_data" class="restriction"  <%= app.enable_background_data.value?"checked":"" %> > Enable Background data  <i class="fa fa-android text-android"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="backup" data-attr = "enable_backup" class="restriction" <%= app.enable_backup.value?"checked":"" %> > Enable Backup <i class="fa fa-android text-android"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="clipboard" data-attr = "enable_clipboard" class="restriction" <%= app.enable_clipboard.value?"checked":"" %>> Enable Clipboard <i class="fa fa-android text-android"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="google_crash_report" data-attr = "enable_google_crash_report" class="restriction" <%= app.enable_google_crash_report.value?"checked":"" %>> Enable Google Crash Report <i class="fa fa-android text-android"></i> <i class="fa fa-apple text-apple"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="data_roaming" data-attr = "enable_data_roaming" class="restriction" <%= app.enable_data_roaming.value?"checked":"" %>> Enable Data while roaming <i class="fa fa-android text-android"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="push_roaming" data-attr = "enable_push_roaming" class="restriction" <%= app.enable_push_roaming.value?"checked":"" %>> Enable Push while roaming <i class="fa fa-android text-android"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="sync_roaming" data-attr = "enable_sync_roaming" class="restriction" <%= app.enable_sync_roaming.value?"checked":"" %>> Enable Sync while roaming <i class="fa fa-android text-android"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="voice_roaming" data-attr = "enable_voice_roaming" class="restriction" <%= app.enable_voice_roaming.value?"checked":"" %>> Enable Voice calls while roaming <i class="fa fa-android text-android"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="explicit_content" data-attr = "allow_explicit_content" class="restriction" <%= app.allow_explicit_content.value?"checked":"" %>> Allow Explicit Content <i class="fa fa-apple text-apple"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="untrusted_tls_prompt" data-attr = "allow_untrusted_tls_prompt" class="restriction" <%= app.allow_untrusted_tls_prompt.value?"checked":"" %>> Allow Untrusted TLS Prompt <i class="fa fa-apple text-apple"></i>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

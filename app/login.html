@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]> <html class="no-js lt-ie9 " lang="en"> <![endif]-->
+<!--[if gte IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <!--[if IE]>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <![endif]-->
+    <title>TopPatch Remediation Vault: Login</title>
+    <meta name="description" content="TopPatch MDM Login Page">
+    <meta name="author" content="TopPatch Inc.">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/application.css">
+    <script src="vendor/modernizr/modernizr.js"></script>
+
+</head>
+<body>
+<!-- [if lt IE9]
+<section class="container">
+    <div class="alert alert-danger alert-dismissable chromeframe" id="ie-warning">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>Top Patch does not support your browser.</strong>
+        <a href="http://browsehappy.com/" class="alert-link">Upgrade to a different browser</a> or
+        <a href="http://www.google.com/chromeframe/?redirect=true" class="alert-link">install Google Chrome Frame</a> to experience this site.
+    </div>
+</section>
+<![endif]-->
+<!-- main -->
+<section class="container" role="main">
+    <div class="login col-lg-4 col-md-6 col-sm-8">
+        <div class="clearfix">
+            <form action="/login/" id="login" method="post" role="form">
+                <div class="logo">
+                    <a href="http://www.toppatch.com/">
+                        <img src="images/brand-logo.png" class="logo" alt="TopPatch Logo"/>
+                    </a>
+                </div>
+                <div class="brand">M<small>obile</small>V<small>ault</small></div>
+                <hr/>
+                <div class="errors">
+                    <div class="alert alert-danger"></div>
+                </div>
+                <div class="fields">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <div class="controls">
+                            <input class="form-control" type="text" id="username" name="name" placeholder="Username"  required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <div class="controls">
+                            <input class="form-control" type="password" id="password" name="password" placeholder="Password" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Sign In</button>
+                    <input type="hidden" name="next" value=""/>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<section>
+    <p class="legal text-center" >&copy; 2013 TopPatch Inc. All rights reserved.</p>
+</section>
+<!--/main -->
+<noscript>
+    <div class="title">JavaScript is required.</div>
+    <div class="subtitle">&nbsp;</div>
+    <div class="subtitle">To use TopPatch Remediation Vault, enable JavaScript in your browser and try again.</div>
+    <hr/>
+    <div class=""><a href="http://www.toppatch.com/"><img src="images/brand-name-tag.png" class="brand-image" alt="Top Patch brand"/></a></div>
+</noscript>
+<script type="text/javascript">
+    var hash = window.document.location.hash;
+    var nextInput = document.getElementsByName('next');
+    nextInput[0].value = hash;
+
+    var errorsDiv = document.getElementsByClassName('errors');
+    errorsDiv[0].style.display = 'none';
+
+    var queryString = window.document.location.search,
+        keyValuePairs = queryString.slice(1).split('&'),
+        queryObject = {};
+
+    keyValuePairs.forEach(function(keyValuePair) {
+        keyValuePair = keyValuePair.split('=');
+        queryObject[keyValuePair[0]] = keyValuePair[1] || '';
+    });
+
+    if(queryObject.hasOwnProperty('err'))
+    {
+        var alertDiv = document.getElementsByClassName('alert alert-danger');
+        alertDiv[0].innerHTML = queryObject.err.replace(/\+/g, ' ');
+        errorsDiv[0].style.display = 'block';
+    }
+</script>
+</body>
+</html>

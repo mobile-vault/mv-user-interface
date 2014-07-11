@@ -1,0 +1,36 @@
+<div class="media"  data-id="<%= id%>" data-source="<%= source %>">
+    <a class="remove" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+    <a class="pull-left" href="#">
+        <img class="media-object"
+             src="<%= thumbnail %>"
+             alt="<%= name %>" style="
+    height: 75px;
+">
+    </a>
+
+    <div class="media-body">
+        <div class="media-heading">
+            <div class="row">
+                <div class="col-sm-6">
+                    <span style="font-size: 20px;"><a href="<%= url %>" target="_blank"> <%= name %></a></span>
+                </div>
+                <div class="col-sm-6">
+            <i class="pull-right <%= source == 'play-store'? 'fa fa-android text-android': 'fa fa-apple text-apple'%>" style="
+    font-size: 18px;
+"></i>
+                    <button class="btn btn-warning fa fa-exclamation-circle pull-right" data-action="user_blacklist">
+                        Blacklist
+                    </button>
+
+                    <button class="btn btn-danger fa fa-trash-o pull-right" data-action="user_remove">
+                        Remove
+                    </button>
+                    <button class="btn btn-success  fa fa-download pull-right" data-action="user_install">
+                        Install
+                    </button>
+                </div>
+                </div>
+        </div>
+        <%= description %>
+    </div>
+</div>

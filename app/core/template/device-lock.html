@@ -1,0 +1,23 @@
+
+       <div class="form-group row">
+           <label for="deviceType" class="col-sm-3 control-label">Device OS </label>
+           <div class="col-sm-4">
+               <select name="deviceType" id="deviceType" class="form-control">
+                   <option value="">Select Device OS</option>
+                   <option value="Android">Android</option>
+                   <option value="iOS">iOS</option>
+               </select>
+          </div>
+       </div>
+
+        <div class="form-group row">
+            <label for="lockKey" class="col-sm-3 control-label">Lock Key:  </label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control col-sm-4" name="lockKey" id="lockKey" disabled required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4 col-sm-offset-3">
+                <button class="btn btn-danger device-lock-btn" name="device_lock"><i class="fa fa-lock"></i> LOCK DEVICE</button>
+            </div>
+        </div>

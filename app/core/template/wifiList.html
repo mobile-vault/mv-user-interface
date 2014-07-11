@@ -1,0 +1,21 @@
+<div class="item linked clearfix" title="<%= model.get('ssid') %>" data-modelid = "<%= model.cid %>">
+    <div class="row">
+        <a href="#policies/company/<%= company_id%>/wifi/<%= model.get('wifi_id') %>">
+            <div class="col-xs-1">
+                <input type="checkbox" name="checkbox" value="<%= model.get('wifi_id') %>"/>
+            </div>
+            <div class="desc col-xs-3" style="overflow: hidden">
+                <strong><%= model.get('ssid') %></strong>
+            </div>
+            <div class="col-xs-3"><%= model.get('wifi_security') %></div>
+            <div class="col-xs-5" >
+                <a href="#policies/company/<%= company_id%>/wifi/<%= model.get('wifi_id') %>" class="btn btn-sm btn-default custom-button" data-action="user_edit" style="padding: 1px 5px">
+                    <i class="fa fa-pencil"></i>&nbsp;Edit
+                </a>
+                <button class="btn btn-sm btn-danger custom-button"  id="deleteWifi" data-action="user_delete">
+                    <i class="fa fa-trash-o"></i>&nbsp;Delete
+                </button>
+            </div>
+        </a>
+    </div>
+</div>

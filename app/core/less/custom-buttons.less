@@ -1,0 +1,334 @@
+@sucessColor: #5cb85c;
+@dangerColor: #d9534f;
+@warningColor: #f0ad4e;
+
+.custom-btn-success {
+  margin: 10px;
+  background-color:@sucessColor;
+  font-family: 'Open Sans', sans-serif;
+  font-size:12px;
+  text-decoration:none;
+  color:#fff;
+  position:relative;
+  padding:10px 20px;
+  border-left:solid 1px darken(@sucessColor, 5%);
+  border-right:none;
+  border-top:none;
+  border-bottom:none;
+  margin-left:25px;
+  background-image: linear-gradient(bottom, darken(@sucessColor, 10%) 0%, darken(@sucessColor, 5%) 100%);
+  background-image: -o-linear-gradient(bottom, darken(@sucessColor, 10%) 0%, darken(@sucessColor, 5%) 100%);
+  background-image: -moz-linear-gradient(bottom, darken(@sucessColor, 10%) 0%, darken(@sucessColor, 5%) 100%);
+  background-image: -webkit-linear-gradient(bottom, darken(@sucessColor, 10%) 0%, darken(@sucessColor, 5%) 100%);
+  background-image: -ms-linear-gradient(bottom, darken(@sucessColor, 10%) 0%, darken(@sucessColor, 5%) 100%);
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, darken(@sucessColor, 10%)),
+    color-stop(1, darken(@sucessColor, 5%))
+  );
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  -webkit-box-shadow: inset 0px 1px 0px darken(@sucessColor, 10%), 0px 4px 0px 0px darken(@sucessColor, 30%), 0px 5px 5px #999;
+  -moz-box-shadow: inset 0px 1px 0px darken(@sucessColor, 10%), 0px 4px 0px 0px darken(@sucessColor, 30%), 0px 5px 5px #999;
+  -o-box-shadow: inset 0px 1px 0px darken(@sucessColor, 10%), 0px 4px 0px 0px darken(@sucessColor, 30%), 0px 5px 5px #999;
+  box-shadow: inset 0px 1px 0px darken(@sucessColor, 10%), 0px 4px 0px 0px darken(@sucessColor, 30%), 0px 5px 5px #999;
+}
+
+.custom-btn-success:active, .custom-btn-success.active {
+  top:3px;
+  background-image: linear-gradient(bottom, darken(@sucessColor, 5%) 0%, darken(@sucessColor, 10%) 100%);
+  background-image: -o-linear-gradient(bottom, darken(@sucessColor, 5%) 0%, darken(@sucessColor, 10%) 100%);
+  background-image: -moz-linear-gradient(bottom, darken(@sucessColor, 5%) 0%, darken(@sucessColor, 10%) 100%);
+  background-image: -webkit-linear-gradient(bottom, darken(@sucessColor, 5%) 0%, darken(@sucessColor, 10%) 100%);
+  background-image: -ms-linear-gradient(bottom, darken(@sucessColor, 5%) 0%, darken(@sucessColor, 10%) 100%);
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, darken(@sucessColor, 5%)),
+    color-stop(1, darken(@sucessColor, 10%))
+  );
+  -webkit-box-shadow: inset 0px 1px 0px darken(@sucessColor, 10%), 0px 2px 0px 0px darken(@sucessColor, 50%), 0px 6px 3px #999;
+  -moz-box-shadow: inset 0px 1px 0px darken(@sucessColor, 10%), 0px 2px 0px 0px darken(@sucessColor, 50%), 0px 6px 3px #999;
+  -o-box-shadow: inset 0px 1px 0px darken(@sucessColor, 10%), 0px 2px 0px 0px darken(@sucessColor, 50%), 0px 6px 3px #999;
+  box-shadow: inset 0px 1px 0px darken(@sucessColor, 10%), 0px 2px 0px 0px darken(@sucessColor, 50%), 0px 6px 3px #999;
+}
+
+.custom-btn-success::before {
+  background-color:darken(@sucessColor, 5%);
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width:30px;
+  max-height:29px;
+  height:100%;
+  position:absolute;
+  display:block;
+  padding-top:8px;
+  top:0px;
+  left:-30px;
+  font-size:16px;
+  color:lighten(@sucessColor, 40%);
+  text-shadow:1px 1px 0px darken(@sucessColor, 20%);
+  border-right:solid 1px darken(@sucessColor, 20%);
+  background-image: linear-gradient(bottom, darken(@sucessColor, 15%) 0%, darken(@sucessColor, 5%) 100%);
+  background-image: -o-linear-gradient(bottom, darken(@sucessColor, 15%) 0%, darken(@sucessColor, 5%) 100%);
+  background-image: -moz-linear-gradient(bottom, darken(@sucessColor, 15%) 0%, darken(@sucessColor, 5%) 100%);
+  background-image: -webkit-linear-gradient(bottom, darken(@sucessColor, 15%) 0%, darken(@sucessColor, 5%) 100%);
+  background-image: -ms-linear-gradient(bottom, darken(@sucessColor, 15%) 0%, darken(@sucessColor, 5%) 100%);
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, darken(@sucessColor, 15%)),
+    color-stop(1, darken(@sucessColor, 5%))
+  );
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  -webkit-box-shadow:inset 0px 1px 0px darken(@sucessColor, 20%), 0px 4px 0px 0px darken(@sucessColor, 30%), 0px 6px 5px #999 ;
+  -moz-box-shadow:inset 0px 1px 0px darken(@sucessColor, 20%), 0px 4px 0px 0px darken(@sucessColor, 30%), 0px 6px 5px #999 ;
+  -o-box-shadow:inset 0px 1px 0px darken(@sucessColor, 20%), 0px 4px 0px 0px darken(@sucessColor, 30%), 0px 6px 5px #999 ;
+  box-shadow:inset 0px 1px 0px darken(@sucessColor, 20%), 0px 4px 0px 0px darken(@sucessColor, 30%), 0px 6px 5px #999 ;
+}
+
+.custom-btn-success:active::before, .custom-btn-success.active::before {
+  top:-3px;
+  -webkit-box-shadow:inset 0px 1px 0px darken(@sucessColor, 10%), 0px 4px 0px 0px darken(@sucessColor, 40%), 1px 1px 0px 0px darken(@sucessColor, 20%), 2px 2px 0px 0px darken(@sucessColor, 20%), 2px 4px 0px 0px darken(@sucessColor, 20%), 6px 4px 2px darken(@sucessColor, 20%), 0px 6px 5px #999 ;
+  -moz-box-shadow:inset 0px 1px 0px darken(@sucessColor, 10%), 0px 4px 0px 0px darken(@sucessColor, 40%), 1px 1px 0px 0px darken(@sucessColor, 20%), 2px 2px 0px 0px darken(@sucessColor, 20%), 2px 4px 0px 0px darken(@sucessColor, 20%), 6px 4px 2px darken(@sucessColor, 20%), 0px 6px 5px #999 ;
+  -o-box-shadow:inset 0px 1px 0px darken(@sucessColor, 10%), 0px 4px 0px 0px darken(@sucessColor, 40%), 1px 1px 0px 0px darken(@sucessColor, 20%), 2px 2px 0px 0px darken(@sucessColor, 20%), 2px 4px 0px 0px darken(@sucessColor, 20%), 6px 4px 2px darken(@sucessColor, 20%), 0px 6px 5px #999 ;
+  box-shadow:inset 0px 1px 0px darken(@sucessColor, 10%), 0px 4px 0px 0px darken(@sucessColor, 40%), 1px 1px 0px 0px darken(@sucessColor, 20%), 2px 2px 0px 0px darken(@sucessColor, 20%), 2px 4px 0px 0px darken(@sucessColor, 20%), 6px 4px 2px darken(@sucessColor, 20%), 0px 6px 5px #999 ;
+}
+
+.custom-btn-danger {
+  margin: 10px;
+  background-color:@dangerColor;
+  font-family: 'Open Sans', sans-serif;
+  font-size:12px;
+  text-decoration:none;
+  color:#fff;
+  position:relative;
+  padding:10px 20px;
+  border-left:solid 1px darken(@dangerColor, 5%);
+  border-right:none;
+  border-top:none;
+  border-bottom:none;
+  margin-left:25px;
+  background-image: linear-gradient(bottom, darken(@dangerColor, 10%) 0%, darken(@dangerColor, 5%) 100%);
+  background-image: -o-linear-gradient(bottom, darken(@dangerColor, 10%) 0%, darken(@dangerColor, 5%) 100%);
+  background-image: -moz-linear-gradient(bottom, darken(@dangerColor, 10%) 0%, darken(@dangerColor, 5%) 100%);
+  background-image: -webkit-linear-gradient(bottom, darken(@dangerColor, 10%) 0%, darken(@dangerColor, 5%) 100%);
+  background-image: -ms-linear-gradient(bottom, darken(@dangerColor, 10%) 0%, darken(@dangerColor, 5%) 100%);
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, darken(@dangerColor, 10%)),
+    color-stop(1, darken(@dangerColor, 5%))
+  );
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  -webkit-box-shadow: inset 0px 1px 0px darken(@dangerColor, 10%), 0px 4px 0px 0px darken(@dangerColor, 30%), 0px 6px 5px #999;
+  -moz-box-shadow: inset 0px 1px 0px darken(@dangerColor, 10%), 0px 4px 0px 0px darken(@dangerColor, 30%), 0px 6px 5px #999;
+  -o-box-shadow: inset 0px 1px 0px darken(@dangerColor, 10%), 0px 4px 0px 0px darken(@dangerColor, 30%), 0px 6px 5px #999;
+  box-shadow: inset 0px 1px 0px darken(@dangerColor, 10%), 0px 4px 0px 0px darken(@dangerColor, 30%), 0px 6px 5px #999;
+}
+
+.custom-btn-danger:active, .custom-btn-danger.active {
+  top:3px;
+  background-image: linear-gradient(bottom, darken(@dangerColor, 5%) 0%, darken(@dangerColor, 10%) 100%);
+  background-image: -o-linear-gradient(bottom, darken(@dangerColor, 5%) 0%, darken(@dangerColor, 10%) 100%);
+  background-image: -moz-linear-gradient(bottom, darken(@dangerColor, 5%) 0%, darken(@dangerColor, 10%) 100%);
+  background-image: -webkit-linear-gradient(bottom, darken(@dangerColor, 5%) 0%, darken(@dangerColor, 10%) 100%);
+  background-image: -ms-linear-gradient(bottom, darken(@dangerColor, 5%) 0%, darken(@dangerColor, 10%) 100%);
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, darken(@dangerColor, 5%)),
+    color-stop(1, darken(@dangerColor, 10%))
+  );
+  -webkit-box-shadow: inset 0px 1px 0px darken(@dangerColor, 10%), 0px 2px 0px 0px darken(@dangerColor, 50%), 0px 5px 3px #999;
+  -moz-box-shadow: inset 0px 1px 0px darken(@dangerColor, 10%), 0px 2px 0px 0px darken(@dangerColor, 50%), 0px 5px 3px #999;
+  -o-box-shadow: inset 0px 1px 0px darken(@dangerColor, 10%), 0px 2px 0px 0px darken(@dangerColor, 50%), 0px 5px 3px #999;
+  box-shadow: inset 0px 1px 0px darken(@dangerColor, 10%), 0px 2px 0px 0px darken(@dangerColor, 50%), 0px 5px 3px #999;
+}
+
+.custom-btn-danger::before {
+  background-color:darken(@dangerColor, 5%);
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width:30px;
+  max-height:29px;
+  height:100%;
+  position:absolute;
+  display:block;
+  padding-top:8px;
+  top:0px;
+  left:-30px;
+  font-size:16px;
+  color:lighten(@dangerColor, 40%);
+  text-shadow:1px 1px 0px darken(@dangerColor, 20%);
+  border-right:solid 1px darken(@dangerColor, 20%);
+  background-image: linear-gradient(bottom, darken(@dangerColor, 15%) 0%, darken(@dangerColor, 5%) 100%);
+  background-image: -o-linear-gradient(bottom, darken(@dangerColor, 15%) 0%, darken(@dangerColor, 5%) 100%);
+  background-image: -moz-linear-gradient(bottom, darken(@dangerColor, 15%) 0%, darken(@dangerColor, 5%) 100%);
+  background-image: -webkit-linear-gradient(bottom, darken(@dangerColor, 15%) 0%, darken(@dangerColor, 5%) 100%);
+  background-image: -ms-linear-gradient(bottom, darken(@dangerColor, 15%) 0%, darken(@dangerColor, 5%) 100%);
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, darken(@dangerColor, 15%)),
+    color-stop(1, darken(@dangerColor, 5%))
+  );
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  -webkit-box-shadow:inset 0px 1px 0px darken(@dangerColor, 20%), 0px 4px 0px 0px darken(@dangerColor, 30%), 0px 6px 5px #999 ;
+  -moz-box-shadow:inset 0px 1px 0px darken(@dangerColor, 20%), 0px 4px 0px 0px darken(@dangerColor, 30%), 0px 6px 5px #999 ;
+  -o-box-shadow:inset 0px 1px 0px darken(@dangerColor, 20%), 0px 4px 0px 0px darken(@dangerColor, 30%), 0px 6px 5px #999 ;
+  box-shadow:inset 0px 1px 0px darken(@dangerColor, 20%), 0px 4px 0px 0px darken(@dangerColor, 30%), 0px 6px 5px #999 ;
+}
+
+.custom-btn-danger:active::before, .custom-btn-danger.active::before {
+  top:-3px;
+  -webkit-box-shadow:inset 0px 1px 0px darken(@dangerColor, 10%), 0px 4px 0px 0px darken(@dangerColor, 40%), 1px 1px 0px 0px darken(@dangerColor, 20%), 2px 2px 0px 0px darken(@dangerColor, 20%), 2px 4px 0px 0px darken(@dangerColor, 20%), 6px 4px 2px darken(@dangerColor, 20%), 0px 6px 5px #999 ;
+  -moz-box-shadow:inset 0px 1px 0px darken(@dangerColor, 10%), 0px 4px 0px 0px darken(@dangerColor, 40%), 1px 1px 0px 0px darken(@dangerColor, 20%), 2px 2px 0px 0px darken(@dangerColor, 20%), 2px 4px 0px 0px darken(@dangerColor, 20%), 6px 4px 2px darken(@dangerColor, 20%), 0px 6px 5px #999 ;
+  -o-box-shadow:inset 0px 1px 0px darken(@dangerColor, 10%), 0px 4px 0px 0px darken(@dangerColor, 40%), 1px 1px 0px 0px darken(@dangerColor, 20%), 2px 2px 0px 0px darken(@dangerColor, 20%), 2px 4px 0px 0px darken(@dangerColor, 20%), 6px 4px 2px darken(@dangerColor, 20%), 0px 6px 5px #999 ;
+  box-shadow:inset 0px 1px 0px darken(@dangerColor, 10%), 0px 4px 0px 0px darken(@dangerColor, 40%), 1px 1px 0px 0px darken(@dangerColor, 20%), 2px 2px 0px 0px darken(@dangerColor, 20%), 2px 4px 0px 0px darken(@dangerColor, 20%), 6px 4px 2px darken(@dangerColor, 20%), 0px 6px 5px #999 ;
+}
+
+
+.custom-btn-warning {
+  margin: 10px;
+  background-color:@warningColor;
+  font-family: 'Open Sans', sans-serif;
+  font-size:12px;
+  text-decoration:none;
+  color:#fff;
+  position:relative;
+  padding:10px 20px;
+  border-left:solid 1px darken(@warningColor, 5%);
+  border-right:none;
+  border-top:none;
+  border-bottom:none;
+  margin-left:25px;
+  background-image: linear-gradient(bottom, darken(@warningColor, 10%) 0%, darken(@warningColor, 5%) 100%);
+  background-image: -o-linear-gradient(bottom, darken(@warningColor, 10%) 0%, darken(@warningColor, 5%) 100%);
+  background-image: -moz-linear-gradient(bottom, darken(@warningColor, 10%) 0%, darken(@warningColor, 5%) 100%);
+  background-image: -webkit-linear-gradient(bottom, darken(@warningColor, 10%) 0%, darken(@warningColor, 5%) 100%);
+  background-image: -ms-linear-gradient(bottom, darken(@warningColor, 10%) 0%, darken(@warningColor, 5%) 100%);
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, darken(@warningColor, 10%)),
+    color-stop(1, darken(@warningColor, 5%))
+  );
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  -webkit-box-shadow: inset 0px 1px 0px darken(@warningColor, 10%), 0px 4px 0px 0px darken(@warningColor, 30%), 0px 6px 5px #999;
+  -moz-box-shadow: inset 0px 1px 0px darken(@warningColor, 10%), 0px 4px 0px 0px darken(@warningColor, 30%), 0px 6px 5px #999;
+  -o-box-shadow: inset 0px 1px 0px darken(@warningColor, 10%), 0px 4px 0px 0px darken(@warningColor, 30%), 0px 6px 5px #999;
+  box-shadow: inset 0px 1px 0px darken(@warningColor, 10%), 0px 4px 0px 0px darken(@warningColor, 30%), 0px 6px 5px #999;
+}
+
+.custom-btn-warning:active, .custom-btn-warning.active {
+  top:3px;
+  background-image: linear-gradient(bottom, darken(@warningColor, 5%) 0%, darken(@warningColor, 10%) 100%);
+  background-image: -o-linear-gradient(bottom, darken(@warningColor, 5%) 0%, darken(@warningColor, 10%) 100%);
+  background-image: -moz-linear-gradient(bottom, darken(@warningColor, 5%) 0%, darken(@warningColor, 10%) 100%);
+  background-image: -webkit-linear-gradient(bottom, darken(@warningColor, 5%) 0%, darken(@warningColor, 10%) 100%);
+  background-image: -ms-linear-gradient(bottom, darken(@warningColor, 5%) 0%, darken(@warningColor, 10%) 100%);
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, darken(@warningColor, 5%)),
+    color-stop(1, darken(@warningColor, 10%))
+  );
+  -webkit-box-shadow: inset 0px 1px 0px darken(@warningColor, 10%), 0px 2px 0px 0px darken(@warningColor, 50%), 0px 5px 3px #999;
+  -moz-box-shadow: inset 0px 1px 0px darken(@warningColor, 10%), 0px 2px 0px 0px darken(@warningColor, 50%), 0px 5px 3px #999;
+  -o-box-shadow: inset 0px 1px 0px darken(@warningColor, 10%), 0px 2px 0px 0px darken(@warningColor, 50%), 0px 5px 3px #999;
+  box-shadow: inset 0px 1px 0px darken(@warningColor, 10%), 0px 2px 0px 0px darken(@warningColor, 50%), 0px 5px 3px #999;
+}
+
+.custom-btn-warning::before {
+  background-color:darken(@warningColor, 5%);
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width:30px;
+  max-height:29px;
+  height:100%;
+  position:absolute;
+  display:block;
+  padding-top:8px;
+  top:0px;
+  left:-30px;
+  font-size:16px;
+  color:lighten(@warningColor, 40%);
+  text-shadow:1px 1px 0px darken(@warningColor, 20%);
+  border-right:solid 1px darken(@warningColor, 20%);
+  background-image: linear-gradient(bottom, darken(@warningColor, 15%) 0%, darken(@warningColor, 5%) 100%);
+  background-image: -o-linear-gradient(bottom, darken(@warningColor, 15%) 0%, darken(@warningColor, 5%) 100%);
+  background-image: -moz-linear-gradient(bottom, darken(@warningColor, 15%) 0%, darken(@warningColor, 5%) 100%);
+  background-image: -webkit-linear-gradient(bottom, darken(@warningColor, 15%) 0%, darken(@warningColor, 5%) 100%);
+  background-image: -ms-linear-gradient(bottom, darken(@warningColor, 15%) 0%, darken(@warningColor, 5%) 100%);
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, darken(@warningColor, 15%)),
+    color-stop(1, darken(@warningColor, 5%))
+  );
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  -webkit-box-shadow:inset 0px 1px 0px darken(@warningColor, 20%), 0px 4px 0px 0px darken(@warningColor, 30%), 0px 6px 5px #999 ;
+  -moz-box-shadow:inset 0px 1px 0px darken(@warningColor, 20%), 0px 4px 0px 0px darken(@warningColor, 30%), 0px 6px 5px #999 ;
+  -o-box-shadow:inset 0px 1px 0px darken(@warningColor, 20%), 0px 4px 0px 0px darken(@warningColor, 30%), 0px 6px 5px #999 ;
+  box-shadow:inset 0px 1px 0px darken(@warningColor, 20%), 0px 4px 0px 0px darken(@warningColor, 30%), 0px 6px 5px #999 ;
+}
+
+.custom-btn-warning:active::before, .custom-btn-warning.active::before {
+  top:-3px;
+  -webkit-box-shadow:inset 0px 1px 0px darken(@warningColor, 10%), 0px 4px 0px 0px darken(@warningColor, 40%), 1px 1px 0px 0px darken(@warningColor, 20%), 2px 2px 0px 0px darken(@warningColor, 20%), 2px 4px 0px 0px darken(@warningColor, 20%), 6px 4px 2px darken(@warningColor, 20%), 0px 6px 5px #999 ;
+  -moz-box-shadow:inset 0px 1px 0px darken(@warningColor, 10%), 0px 4px 0px 0px darken(@warningColor, 40%), 1px 1px 0px 0px darken(@warningColor, 20%), 2px 2px 0px 0px darken(@warningColor, 20%), 2px 4px 0px 0px darken(@warningColor, 20%), 6px 4px 2px darken(@warningColor, 20%), 0px 6px 5px #999 ;
+  -o-box-shadow:inset 0px 1px 0px darken(@warningColor, 10%), 0px 4px 0px 0px darken(@warningColor, 40%), 1px 1px 0px 0px darken(@warningColor, 20%), 2px 2px 0px 0px darken(@warningColor, 20%), 2px 4px 0px 0px darken(@warningColor, 20%), 6px 4px 2px darken(@warningColor, 20%), 0px 6px 5px #999 ;
+  box-shadow:inset 0px 1px 0px darken(@warningColor, 10%), 0px 4px 0px 0px darken(@warningColor, 40%), 1px 1px 0px 0px darken(@warningColor, 20%), 2px 2px 0px 0px darken(@warningColor, 20%), 2px 4px 0px 0px darken(@warningColor, 20%), 6px 4px 2px darken(@warningColor, 20%), 0px 6px 5px #999 ;
+}

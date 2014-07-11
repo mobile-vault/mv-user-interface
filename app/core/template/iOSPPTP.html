@@ -1,0 +1,74 @@
+<% if(PPTP) { %>
+
+    <div class="form-group" name="userAuthDiv">
+        <label class="col-sm-offset-1 col-sm-3 control-label">User Authentication: </label>
+        <div class="col-sm-4">
+            <label class="radio-inline">
+                <input type="radio" name="userRadios" id="pptpPassword" > Password
+            </label>
+            <label class="checkbox-inline">
+                <input type="radio" name="userRadios" id="pptpRSAID" > RSA SecurID
+            </label>
+            <span class="display-none" name="userAuthError"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="encryptionLevel" class="col-sm-offset-1 col-sm-3 control-label">Encryption Level: </label>
+        <div class="col-sm-4">
+            <select class="form-control" id="encryptionLevel">
+                <option value="None">None</option>
+                <option value="EncryptionAutomatic">Automatic</option>
+                <option value="EncryptionMax">Maximum(128-bit)</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-4">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="pptpTraffic"> Send All Traffic
+                </label>
+            </div>
+        </div>
+    </div>
+
+<% } else if(L2TP) { %>
+
+    <div class="form-group" name="userAuthDiv">
+        <label class="col-sm-offset-1 col-sm-3 control-label">User Authentication: </label>
+        <div class="col-sm-4">
+            <label class="radio-inline">
+                <input type="radio" name="userRadios" id="l2tpPassword" value="password"> Password
+            </label>
+            <label class="checkbox-inline">
+                <input type="radio" name="userRadios" id="l2tpRSAID" value="rsaSecurID"> RSA SecurID
+            </label>
+            <span class="display-none" id="userAuthError"></span>
+        </div>
+    </div>
+
+    <div class="form-group" name="sharedSecretDiv">
+        <label for="sharedSecret" class="col-sm-offset-1 col-sm-3 control-label">Shared Secret: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="sharedSecret" placeholder="[Optional]">
+            <input type="hidden" id="model-cid" value="">
+            <span class="display-none" id="sharedSecretError"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-4">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="l2tpTraffic"> Send All Traffic
+                </label>
+            </div>
+        </div>
+    </div>
+
+<% } else if(IPSecRSA) {%>
+
+
+
+<% } %>

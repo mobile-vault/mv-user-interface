@@ -1,0 +1,33 @@
+<div class="white-background broadcast">
+    <div class="col-xs-12 text-center gray-background panel-log">
+        Logs
+    </div>
+    <div class="col-xs-12 body-timeline text-center">
+        <ul class='timeline'>
+            <% if(collection.length) { %>
+            <% _.each(logs, function(log) { %>
+            <li class='event'>
+                <p class="date text-bold">
+                    <%
+                    var timestamp = new Date(log.timestamp);
+
+                    print(timestamp.getDate() + ' ' + months[timestamp.getMonth()] + ', ' + days[timestamp.getDay()] );
+                    %>
+                </p>
+                <p>
+                    <%= log.message %>
+                </p>
+                <p class="time">
+                    <%
+                    var time = new Date(timestamp.getTime());
+                    print(time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds());
+                    %>
+                </p>
+            </li>
+            <% }); %>
+            <% } else { %>
+            <div>No Logs available.</div>
+            <% } %>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,401 @@
+<div class="row page-header">
+    <div class="col-sm-7">
+        <h2 class=" policies-header">Applications Policies</h2>
+    </div>
+    <div class="col-sm-5">
+        <div class="pull-right object-legend"><span class="object"><i class="fa <% if(object_type === 'Company') print('fa-building-o'); else if(object_type === 'User') print ('fa-user'); else print ('fa-users'); %>"></i> <%= object_type %></span>: <span><%= name %></span></span></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">Install-Remove-Blacklist Applications <i
+                        class="fa fa-apple text-apple pull-right"></i> <i
+                        class="fa fa-android text-android pull-right"></i></h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="input-group search-application-container">
+                    <input type="text" class="form-control" placeholder="Search for an Application here..."
+                           name="applications-search">
+                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                </div>
+
+                <div class="search-ac search-result-container" id="search-frame">
+                    <ul id="search-items">
+
+
+                    </ul>
+                    <div class="search-scrollbar">
+                        <div class="search-handle">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="selected-applications-container">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container installed-applications">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">Installed Applications<i class="fa fa-apple text-apple pull-right"></i> <i class="fa fa-android text-android pull-right"></i> <span class="label label-primary unsaved-changes hidden pull-right">UNSAVED CHANGES</span> </h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="installed-applications-container applications-container">
+
+                    <div class="installed-applications-content-container">
+                        <div class="status text-center"><%= installed_apps.length?'':'There are no installed apps.' %></div>
+                        <% _.each(installed_apps, function(app){%>
+                        <div class="media"  data-id="<%= app.id%>" data-source="<%= app.source %>">
+                            <a class="remove" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+                            <a class="pull-left" href="#">
+                                <img class="media-object"
+                                     src="<%= app.thumbnail %>"
+                                     alt="<%= app.name %>" style="
+    height: 75px;
+">
+                            </a>
+
+                            <div class="media-body">
+                                <div class="media-heading">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <span style="font-size: 20px;"><a href="<%= app.url %>" target="_blank"> <%= app.name %></a></span>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <i class="pull-right <%= app.source == 'play-store'? 'fa fa-android text-android': 'fa fa-apple text-apple'%>" style="
+    font-size: 18px;
+"></i>
+                                            <button class="btn btn-warning fa fa-exclamation-circle pull-right" data-action="user_blacklist">
+                                                Blacklist
+                                            </button>
+
+                                            <button class="btn btn-danger fa fa-trash-o pull-right" data-action="user_remove" >
+                                                Remove
+                                            </button>
+                                            <button class="btn btn-success disabled fa fa-download pull-right" data-action="user_install">
+                                                Installed
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <%= app.description %>
+                            </div>
+                        </div>
+
+                        <% });%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container removed-applications">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">Removed Applications<i class="fa fa-apple text-apple pull-right"></i> <i class="fa fa-android text-android pull-right"></i> <span class="label label-primary unsaved-changes hidden pull-right">UNSAVED CHANGES</span> </h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="removed-applications-container applications-container">
+
+                    <div class="removed-applications-content-container">
+                        <div class="status text-center"><%= removed_apps.length?'':'There are no removed apps.' %></div>
+                        <% _.each(removed_apps, function(app){%>
+                        <div class="media"  data-id="<%= app.id%>" data-source="<%= app.source %>">
+
+                            <a class="remove" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+                            <a class="pull-left" href="#">
+                                <img class="media-object"
+                                     src="<%= app.thumbnail %>"
+                                     alt="<%= app.name %>" style="
+    height: 75px;
+">
+                            </a>
+
+                            <div class="media-body">
+                                <div class="media-heading">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <span style="font-size: 20px;"><a href="<%= app.url %>" target="_blank"> <%= app.name %></a></span>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <i class="pull-right <%= app.source == 'play-store'? 'fa fa-android text-android': 'fa fa-apple text-apple'%>" style="
+    font-size: 18px;
+"></i>
+                                            <button class="btn btn-warning fa fa-exclamation-circle pull-right" data-action="user_blacklist" >
+                                                Blacklist
+                                            </button>
+
+                                            <button class="btn btn-danger disabled fa fa-trash-o pull-right" data-action="user_remove" >
+                                                Removed
+                                            </button>
+                                            <button class="btn btn-success  fa fa-download pull-right" data-action="user_install">
+                                                Install
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <%= app.description %>
+                            </div>
+                        </div>
+
+                        <% });%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container blacklisted-applications">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">Blacklisted Applications<i class="fa fa-apple text-apple pull-right"></i> <i class="fa fa-android text-android pull-right"></i> <span class="label label-primary unsaved-changes hidden pull-right">UNSAVED CHANGES</span>  </h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="blacklisted-applications-container applications-container">
+
+                    <div class="blacklisted-applications-content-container">
+                        <div class="status text-center"><%= blacklisted_apps.length?'':'There are no blacklisted apps.' %></div>
+                        <% _.each(blacklisted_apps, function(app){%>
+                        <div class="media"  data-id="<%= app.id%>" data-source="<%= app.source %>">
+                            <a class="remove" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+                            <a class="pull-left" href="#">
+                                <img class="media-object"
+                                     src="<%= app.thumbnail %>"
+                                     alt="<%= app.name %>" style="
+    height: 75px;
+">
+                            </a>
+
+                            <div class="media-body">
+                                <div class="media-heading">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <span style="font-size: 20px;"><a href="<%= app.url %>" target="_blank"> <%= app.name %></a></span>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <i class="pull-right <%= app.source == 'play-store'? 'fa fa-android text-android': 'fa fa-apple text-apple'%>" style="font-size: 18px;"></i>
+                                            <button class="btn btn-warning disabled fa fa-exclamation-circle pull-right" data-action="user_blacklist">
+                                                Blacklisted
+                                            </button>
+
+                                            <button class="btn btn-danger fa fa-trash-o pull-right" data-action="user_remove">
+                                                Remove
+                                            </button>
+                                            <button class="btn btn-success  fa fa-download pull-right" data-action="user_install" >
+                                                Install
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <%= app.description %>
+                            </div>
+                        </div>
+
+                        <% });%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container youtube-enable">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">Youtube <i class="fa fa-android text-android pull-right"></i></h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="youtube" class="restriction" <%= youtube_enable.value?"checked":""%>> Enable Youtube
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container playstore-enable">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">PlayStore/AppStore <i class="fa fa-apple text-apple pull-right"></i> <i
+                        class="fa fa-android text-android pull-right"></i></h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="appstore" class="restriction" <%= playstore_enable.value?"checked":""%>> Enable App/Play Store
+                    </label>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container browser-settings">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">Browser <i class="fa fa-apple text-apple pull-right"></i> <i
+                        class="fa fa-android text-android pull-right"></i></h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="enable_autofill" class="restriction" <%= browser_settings.enable_autofill?"checked":""%> data-attr="enable_autofill"> Enable Autofill
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="enable_cookies" data-attr="enable_cookies" class="restriction" <%= browser_settings.enable_cookies?"checked":""%>> Enable Cookies
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="force_fraud_warnings" data-attr="force_fraud_warnings" class="restriction" <%= browser_settings.force_fraud_warnings?"checked":""%>> Force Fraud Warnings
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="enable_http_proxy" data-attr="enable_http_proxy" class="restriction" <%= browser_settings.enable_http_proxy?"checked":""%>> Enable HTTP Proxy
+                    </label>
+
+                    <div class="row <%= browser_settings.enable_http_proxy?'':'hidden'%> http_proxy_value">
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control input-sm" name="http_proxy_value" data-attr="http_proxy_value"
+                                   placeholder="HTTP Proxy Value" value="<%= browser_settings.http_proxy_value%>">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="enable_javascript" data-attr="enable_javascript" class="restriction" <%= browser_settings.enable_javascript?"checked":""%>> Enable Javascript
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="enable_popups" data-attr="enable_popups" class="restriction" <%= browser_settings.enable_popups?"checked":""%>> Enable Popups
+                    </label>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container recording_enable">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">Recording <i class="fa fa-android text-android pull-right"></i></h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="recording" class="restriction" <%= enable_recording.value?"checked":""%>> Enable Recording   </i>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container app-installation">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">App Installation <i class="fa fa-android text-android pull-right"></i></h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="allow_app_installation" class="restriction" <%= allow_app_installation.value?"checked":""%>> Allow App Installation </i>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container in-app-purchases">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">In App Purchases <i class="fa fa-apple text-apple pull-right"></i> <i
+                        class="fa fa-android text-android pull-right"></i></h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="allow_in_app_purchases" class="restriction" <%= allow_in_app_purchases.value?"checked":""%>> Allow In App Purchases </i>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container iTunes">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">iTunes <i class="fa fa-apple text-apple pull-right"></i> </h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="enable_itunes" class="restriction" <%= itunes_enable.value?"checked":""%>> Enable iTunes </i>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container siri">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">Siri <i class="fa fa-apple text-apple pull-right"></i> </h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="enable_siri" class="restriction" <%= siri_enable.value?"checked":""%>> Enable Siri </i>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container safari">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">Safari <i class="fa fa-apple text-apple pull-right"></i> </h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="enable_safari" class="restriction" <%= safari_enable.value?"checked":""%>> Enable Safari </i>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

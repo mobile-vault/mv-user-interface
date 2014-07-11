@@ -1,0 +1,29 @@
+<div class="row page-header">
+    <div class="col-sm-7">
+        <h2 class="policies-header">Bluetooth Policies</h2>
+    </div>
+    <div class="col-sm-5">
+        <div class="pull-right object-legend"><span class="object"><i class="fa <% if(object_type === 'Company') print('fa-building-o'); else if(object_type === 'User') print ('fa-user'); else print ('fa-users'); %>"></i> <%= object_type %></span>: <span><%= name %></span></span></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container bluetooth-settings">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">Enable Bluetooth <i class="fa fa-android text-android pull-right"></i></h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="enableBluetooth" data-attr="enable_bluetooth" id="enableBluetooth" class="restriction" <%= model.get('enable_bluetooth')?"checked":""%>> Enable Bluetooth
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="bluetoothPowerStatus" data-attr="power_status" id="bluetoothPowerStatus" class="restriction" <%= model.get('power_status')?"checked":""%>> Enable Bluetooth Discoverable
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<form class="form-horizontal" id="iOSVPNForm" role="form" method="POST">
+    <div class="form-group" id="connectionNameDiv">
+        <label for="connectionName" class="col-sm-offset-1 col-sm-3 control-label">Connection Name: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="connectionName" placeholder="Connection Name">
+            <span class="display-none" id="connectionNameError"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="vpnType" class="col-sm-offset-1 col-sm-3 control-label">Connection Type: </label>
+        <div class="col-sm-4">
+            <select class="form-control" id="vpnType">
+                <option value="PPTP">PPTP</option>
+                <option value="L2TP">L2TP</option>
+                <!--<option value="IPSecCisco">IPSec(Cisco)</option>-->
+            </select>
+        </div>
+    </div>
+    <div class="form-group" id="serverDiv">
+        <label for="server" class="col-sm-offset-1 col-sm-3 control-label">Server Address: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="server" placeholder="Server Address">
+            <input type="hidden" id="model-cid" value="">
+            <span class="display-none" id="serverError"></span>
+        </div>
+    </div>
+    <div class="form-group" id="accountAuthDiv">
+        <label for="accountAuth" class="col-sm-offset-1 col-sm-3 control-label">Account: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="accountAuth" placeholder="[set on device]">
+            <span class="display-none" id="accountAuthError"></span>
+        </div>
+    </div>
+    <div id="iOSSelectDependentDiv"></div>
+    <div class="form-group">
+        <label for="proxySetup" class="col-sm-offset-1 col-sm-3 control-label">Proxy Setup: </label>
+        <div class="col-sm-4">
+            <select class="form-control" id="proxySetup">
+                <option value="none">None</option>
+                <option value="manual">Manual</option>
+                <option value="automatic">Automatic</option>
+            </select>
+        </div>
+    </div>
+    <div id="proxy-Setup"></div>
+    <div class="form-group">
+        <div class="col-sm-offset-5 col-sm-4">
+            <button type="submit" id="saveiOSVPNProfile" class="btn btn-primary">Save VPN Profile</button>
+        </div>
+    </div>
+</form>
+
+

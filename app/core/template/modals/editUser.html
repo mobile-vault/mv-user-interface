@@ -1,0 +1,75 @@
+<% if(header) { %>
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+    <i class="fa fa-times-circle-o"></i>
+</button>
+<h4 class="modal-title" id="edit-user-label"><%= payload.userModel.get('user_name') %></h4>
+<span class="user-designation text-bold"><%= payload.userModel.get('user_role') %></span>
+<% } else { %>
+<div class="modal-body">
+    <div class="col-sm-12 error-message-container">
+
+    </div>
+    <form class="form-horizontal" id="edit-user-form">
+        <div class="form-group">
+            <label for="edit-user-id" class="col-lg-2 col-sm-2 col-md-2">User ID: </label>
+
+            <div class="col-lg-10 col-md-10 col-sm-10">
+                <input type="text" class="form-control" id="edit-user-id" value="<%= payload.userModel.get('user_id') %>" disabled>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="edit-user-name" class="col-lg-2 col-sm-2 col-md-2 control-label">User Name: </label>
+
+            <div class="col-lg-10 col-md-10 col-sm-10">
+                <input type="text" class="form-control" id="edit-user-name" placeholder="User Name" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-2 col-sm-2 col-md-2">
+                <span class="text-bold keys">Company:</span>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-10 values text-bold">
+                <span id="edit-company">TopPatch</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="edit-role-name" class="col-lg-2 col-sm-2 col-md-2 control-label">Role: </label>
+
+            <div class="col-lg-10 col-md-10 col-sm-10">
+                <select class="form-control" id="edit-role-name" required="">
+                    <% _.each(payload.roles, function(roleObj) {
+                    if(roleObj.role === userRole) { %>
+                    <option value="<%= roleObj.role_id %>" selected><%= roleObj.role %></option>
+                    <% } else { %>
+                    <option value="<%= roleObj.role_id %>"><%= roleObj.role %></option>
+                    <% }
+                    }); %>
+                </select>
+            </div>
+        </div>
+        <div class="form-group no-border">
+            <label for="edit-team-name" class="col-lg-2 col-sm-2 col-md-2 control-label">Team: </label>
+
+            <div class="col-lg-10 col-md-10 col-sm-10">
+                <select class="form-control" id="edit-team-name" required="">
+                    <% _.each(payload.teams, function(teamObj) {
+                    if(teamObj.team === userTeam) { %>
+                    <option value="<%= teamObj.team_id %>" selected><%= teamObj.team %></option>
+                    <% } else { %>
+                    <option value="<%= teamObj.team_id %>"><%= teamObj.team %></option>
+                    <% }
+                    }); %>
+                </select>
+            </div>
+        </div>
+        <div class="form-group no-border">
+            <div class="col-sm-3 col-xs-3">
+                <button type="submit" class="btn btn-primary no-border-radius custom-btn">Save</button>
+            </div>
+        </div>
+    </form>
+    <div class="col-sm-12 show-status text-center margin-top-large">
+
+    </div>
+</div>
+<% } %>

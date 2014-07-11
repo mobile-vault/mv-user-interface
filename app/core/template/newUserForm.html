@@ -1,0 +1,49 @@
+<div class="row enroll-form white-background">
+    <form class="form-horizontal margin-top-small" role="form" id="enroll" action="" method="POST">
+        <div class="form-group">
+            <div class="col-lg-12 gray-background form-panel">
+                <span>New User</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="alert alert-danger custom-enroll-error">Sorry! An error occured! Try again</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label for="email" class="enroll-label">User's Email</label>
+
+                <input type="email" class="form-control input-lg" id="email" placeholder="Email" name="email"
+                        >
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label for="user-name" class="enroll-label">Name</label>
+                <input type="text" class="form-control input-lg" id="user-name" placeholder="Name"
+                       name="user-name">
+            </div>
+        </div>
+        <div id="userEnroll" class="form-group"></div>
+        <div class="form-group">
+            <div class="col-xs-12 text-center">
+                <button type="submit" id="enroll-button" class="btn btn-primary btn-lg">Enroll</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-5">
+                <span class="horizontal-ruler"></span>
+            </div>
+            <div class="col-xs-2 text-center">
+                <span class="button-division">Or</span>
+            </div>
+            <div class="col-xs-5">
+                <span class="horizontal-ruler"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-12 text-center">
+                <button type="button" id="bulk-upload" class="btn btn-success btn-lg">Bulk Upload</button>
+            </div>
+        </div>
+    </form>
+</div>

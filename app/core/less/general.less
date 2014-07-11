@@ -1,0 +1,57 @@
+BODY {
+  font-family: "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  padding-top: 20px;
+  padding-bottom: @footerHeight;
+
+  > FOOTER {
+    background-color: #F8F8F8;
+    height: @footerHeight;
+    color: darken(@TP_DarkGrey,4%);
+    border-top: 1px solid #E0E0E0;
+    border-bottom: 1px solid #E0E0E0;
+  }
+}
+
+.loading-container {
+  .brand {
+    font-size: 20px;
+  }
+}
+
+#pageFooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: @zindex-modal-background - 5;
+}
+
+.brand {
+  color: @brandColor !important;
+  margin-left:0;
+  padding-left:0;
+  text-transform:uppercase;
+  font-weight: 600;
+
+  SMALL {
+    color: @brandColor !important;
+    font-size: 75%;
+    line-height: 1em;
+  }
+}
+
+li {
+  [class^="icon-"], [class*=" icon-"] {
+    line-height: 1.25em;
+  }
+}
+
+H1, H2, H3, H4, H5, H6 { margin:0; }
+
+.legal {
+  line-height: @footerHeight;
+}
+
+SELECT {
+  padding: 0;
+}

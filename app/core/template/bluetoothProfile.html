@@ -1,0 +1,90 @@
+<% if(whiteListPairings) { %>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container white-listed-pairings">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">White Listed Pairings <i class="fa fa-android text-android pull-right"></i></h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="row user-inner-container">
+                    <div class="col-sm-12 search-box">
+                        <div class="pull-right">
+                            <button class="btn btn-sm btn-primary custom-button" id="addToWhitelist">
+                                <i class="fa fa-plus"></i>&nbsp;Add New Pairing
+                            </button>
+                            <button class="btn btn-sm btn-danger custom-button" id="whitelistDelete" disabled="disabled">
+                                <i class="fa fa-trash-o"></i>&nbsp;Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-table">
+                    <div class="custom-user-table">
+                        <div class="row titles">
+                            <div class="col-xs-1">
+                                <input type="checkbox" data-toggle="all" id="selectAllWhitelist"/>
+                            </div>
+                            <div class="col-xs-3"><span class="table-data">Bluetooth Name</span></div>
+                            <!--<div class="col-xs-2"><span class="table-data">Bluetooth COD</span></div>-->
+                            <!--<div class="col-xs-2"><span class="table-data">Bluetooth UUID</span></div>-->
+                            <div class="col-xs-2"><span class="table-data">Bluetooth Address</span></div>
+                            <div class="col-xs-4"><span class="table-data">Actions</span></div>
+                        </div>
+                        <div class="whiteListedPairings">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% } else if(blackListPairings) { %>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container black-listed-pairings">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">Black Listed Pairings <i class="fa fa-android text-android pull-right"></i></h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="row user-inner-container">
+                    <div class="col-lg-12 search-box">
+                        <div class="pull-right">
+                            <button class="btn btn-sm btn-primary custom-button" id="addToBlacklist">
+                                <i class="fa fa-plus"></i>&nbsp;Add New Pairing
+                            </button>
+                            <button class="btn btn-sm btn-danger custom-button" id="blacklistDelete" disabled="disabled">
+                                <i class="fa fa-trash-o"></i>&nbsp;Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-table">
+                    <div class="custom-user-table">
+                        <div class="row titles">
+                            <div class="col-xs-1">
+                                <input type="checkbox" data-toggle="all" id="selectAllBlacklist"/>
+                            </div>
+                            <div class="col-xs-3"><span class="table-data">Bluetooth Name</span></div>
+                            <!--<div class="col-xs-2"><span class="table-data">Bluetooth COD</span></div>-->
+                            <!--<div class="col-xs-2"><span class="table-data">Bluetooth UUID</span></div>-->
+                            <div class="col-xs-2"><span class="table-data">Bluetooth Address</span></div>
+                            <div class="col-xs-4"><span class="table-data">Actions</span></div>
+                        </div>
+                        <div class="blackListedPairings">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% } else { %>
+<div id="bluetoothList">
+
+</div>
+
+<div id="bluetooth-form" class="display-none">
+
+</div>
+<% } %>

@@ -1,0 +1,11 @@
+<% if(header) { %>
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+    <i class="fa fa-times-circle-o"></i>
+</button>
+<% } else { %>
+<section class="text-center">
+    <a href="#users/add/bulkUpload" role="button" id="bulkUpload" data-action="confirm" class="btn btn-default blue-gradient-button add-button">Bulk Upload</a>
+    <div class="padding-sm text-bold"> or </div>
+    <a href="#users/add/singleUser" role="button" id="addSingleUser" data-action="confirm" class="btn btn-default blue-gradient-button add-button">Add Single User</a>
+</section>
+<% } %>

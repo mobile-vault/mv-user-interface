@@ -1,0 +1,11 @@
+<li data-id="<%= id %>" data-source="<%= source %>">
+    <div class="media search-item-container"  data-storetype="<%= source %>">
+        <div class="pull-left" href="#">
+            <img class="media-object" src="<%= thumbnail %>" alt="<%= name %>">
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading"><%= name %><i class="pull-right <%= source == 'play-store'? 'fa fa-android text-android': 'fa fa-apple text-apple'%>"></i></h4>
+            <%= description %>
+        </div>
+    </div>
+</li>

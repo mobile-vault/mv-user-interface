@@ -1,0 +1,38 @@
+<% if(manual) { %>
+    <div class="form-group" name="serverDiv">
+        <label for="proxyServer" class="col-sm-offset-1 col-sm-3 control-label">Server: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="proxyServer">
+            <span class="display-none" id="serverError"></span>
+        </div>
+    </div>
+    <div class="form-group" name="portDiv">
+        <label for="port" class="col-sm-offset-1 col-sm-3 control-label">Port: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="port">
+            <span class="display-none" id="portError"></span>
+        </div>
+    </div>
+    <div class="form-group" name="authenticationDiv">
+        <label for="authentication" class="col-sm-offset-1 col-sm-3 control-label">Authentication: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="authentication">
+            <span class="display-none" id="authenticationError"></span>
+        </div>
+    </div>
+    <div class="form-group" name="passwordDiv">
+        <label for="password" class="col-sm-offset-1 col-sm-3 control-label">Password: </label>
+        <div class="col-sm-4">
+            <input type="password" class="form-control" id="password">
+            <span class="display-none" id="passwordError"></span>
+        </div>
+    </div>
+<% } else if(automatic) { %>
+    <div class="form-group" name="proxyServerURLDiv">
+        <label for="proxyServerURL" class="col-sm-offset-1 col-sm-3 control-label">Proxy Server URL: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="proxyServerURL" placeholder="[Optional]">
+            <span class="display-none" id="proxyServerURLError"></span>
+        </div>
+    </div>
+<% } %>

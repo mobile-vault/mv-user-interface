@@ -1,0 +1,50 @@
+<% if (header) { %>
+    <div class="row user-inner-container">
+        <div class="col-lg-12 search-box">
+            <div class="pull-right">
+                <button class="btn btn-sm btn-primary" id="addWiFi">
+                    <i class="fa fa-plus"></i>&nbsp;Add Wi-Fi
+                </button>
+                <button class="btn btn-sm btn-danger" id="delete" disabled="disabled">
+                    <i class="fa fa-trash-o"></i>&nbsp;Delete
+                </button>
+            </div>
+        </div>
+    </div>
+<% } else if (legend) { %>
+    <div class="user-table">
+        <div class="custom-user-table">
+            <div class="row titles">
+                <div class="col-xs-1">
+                    <input type="checkbox" data-toggle="all"/>
+                </div>
+                <div class="col-xs-3"><span class="table-data">SSID</span></div>
+                <div class="col-xs-3"><span class="table-data">Wi-Fi Security</span></div>
+                <div class="col-xs-5"><span class="table-data">Actions</span></div>
+            </div>
+        </div>
+    </div>
+
+<% } else { %>
+<div class="row page-header ">
+    <div class="col-sm-7">
+        <h2 class="policies-header">WiFi Policies</h2>
+    </div>
+    <div class="col-sm-5">
+        <div class="pull-right object-legend"><span class="object"><i class="fa <% if(object_type === 'Company') print('fa-building-o'); else if(object_type === 'User') print ('fa-user'); else print ('fa-users'); %>"></i> <%= object_type %></span>: <span><%= name %></span></span></div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container wifi-list-container">
+            <div class="sub-policy-content-container wifiList">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="wifi-form" class="display-none">
+
+</div>
+<% } %>

@@ -1,0 +1,93 @@
+<% if (header) { %>
+<div class="col-lg-12 gray-background">
+    <div class="row user-inner-container">
+        <div class="col-lg-12 search-box">
+            <div class="pull-left">
+                <small>Search By</small>
+                <select name="advancedSearch" class="form-control display-inline" style="width: auto">
+                    <option value="name">Name</option>
+                    <option value="role">Role</option>
+                    <option value="team">Team</option>
+                    <option value="device_id">Device ID</option>
+                </select>
+                <span>&nbsp;</span>
+                <div class="input-group input-group-sm display-inline-block" id="searchBox">
+                    <span class="input-group-addon  display-inline icon-container">
+                        <i class="fa fa-search"></i>
+                    </span>
+                    <input type="text" id="searchText" name="search" data-type="name" class="form-control search-input" placeholder="Search By Name" style="width: auto">
+                </div>
+            </div>
+            <div class="pull-right">
+                <small>Sort By</small>
+                <select name="sortBy" class="form-control display-inline" style="width: auto">
+                    <option value="name">Name</option>
+                    <option value="role">Roles</option>
+                    <option value="team">Teams</option>
+                    <option value="device_id">Device ID</option>
+                </select>
+                <span>&nbsp;</span>
+
+                <select name="sortType" class="form-control display-inline" style="width: auto">
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                </select>
+                <span>&nbsp;</span>
+                <small>Filter By</small>
+                <select name="filterKey" class="form-control display-inline" style="width: auto">
+                    <option value="">None</option>
+                    <option value="role">Roles</option>
+                    <option value="team">Teams</option>
+                    <option value="os">Operating System</option>
+                </select>
+                <span>&nbsp;</span>
+
+                <select name="filterValue" class="form-control display-inline" disabled="disabled" style="width: auto">
+                </select>
+                <button class="btn btn-sm btn-danger" id="delete" disabled="disabled">
+                    <i class="fa fa-trash-o"></i>&nbsp;Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<% } else if (legend) { %>
+    <div class="user-table">
+        <div class="custom-user-table">
+            <div class="row titles">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                    <input type="checkbox" data-toggle="all"/>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><span class="table-data">User Name</span></div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><span class="table-data">Roles</span></div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><span class="table-data">Teams</span></div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><span class="table-data">Device ID</span></div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="table-data">Actions</span></div>
+            </div>
+        </div>
+    </div>
+<% } else { %>
+
+<div class="row">
+    <div class="col-lg-8 user-tabs">
+        <ul class="nav nav-tabs text-center">
+            <li
+            <% if (tab === 'all') { print('class="active"'); } %>><a href="/users" class="innerTabs"
+                                                                     data-type="all">All</a></li>
+            <li
+            <% if (tab === 'enrolled') { print('class="active"'); } %>><a href="/users/enrolled" class="innerTabs" data-type="enrolled">Enrolled</a></li>
+            <li
+            <% if (tab === 'pending') { print('class="active"'); } %>><a href="/users/pending" class="innerTabs"
+                                                                               data-type="pending">Pending</a></li>
+            <li
+            <% if (tab === 'removedprofile') { print('class="active"'); } %>><a href="/users/removedprofile" class="innerTabs"
+                                                                               data-type="removedprofile">Removed Profile</a></li>
+        </ul>
+
+    </div>
+    <div class="col-lg-4 user-actions">
+        <button class="btn btn-success add-user pull-right"><i class="fa fa-plus-circle"> Add User</i></button>
+    </div>
+</div>
+<div class="tab-content user-outer-container"></div>
+<% } %>

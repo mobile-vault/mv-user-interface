@@ -1,0 +1,114 @@
+<% if (header) { %>
+<div class="col-sm-12 gray-background no-padding-left no-padding-right">
+    <div class="row user-inner-container">
+        <div class="col-sm-12 search-box">
+            <div class="pull-left">
+                <small>Search By</small>
+                <select name="advancedSearch" class="form-control display-inline" style="width: auto">
+                    <option value="name">Name</option>
+                    <option value="team">Team</option>
+                    <option value="deviceID">Device ID</option>
+                </select>
+                <span>&nbsp;</span>
+                <div class="input-group input-group-sm display-inline-block" id="searchBox">
+                    <span class="input-group-addon  display-inline icon-container">
+                        <i class="fa fa-search"></i>
+                    </span>
+                    <input type="text" id="searchText" name="search" data-type="name" class="form-control search-input" placeholder="Search By Name" style="width: auto">
+                </div>
+            </div>
+            <div class="pull-right">
+                <small>Sort By</small>
+                <select name="sortBy" class="form-control display-inline" style="width: auto">
+                    <option value="name">Name</option>
+                    <option value="team">Teams</option>
+                    <option value="device_id">Device ID</option>
+                </select>
+                <span>&nbsp;</span>
+
+                <select name="sortType" class="form-control display-inline" style="width: auto">
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                </select>
+                <span>&nbsp;</span>
+                <small>Filter By</small>
+                <select name="filterKey" class="form-control display-inline" style="width: auto">
+                    <option value="">None</option>
+                    <option value="team">Teams</option>
+                </select>
+                <span>&nbsp;</span>
+
+                <select name="filterValue" class="form-control display-inline" disabled="disabled">
+                </select>
+                <button class="btn btn-sm btn-danger" id="delete" disabled="disabled">
+                    <i class="fa fa-trash-o"></i>&nbsp;Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<% } else if (legend) { %>
+<div class="user-table">
+    <div class="custom-user-table">
+        <div class="row titles">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                <input type="checkbox" data-toggle="all"/>
+                <input type="hidden" id="model-cid">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="table-data">User Name</span></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><span class="table-data">Teams</span></div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="table-data">Device ID</span></div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="table-data">Actions</span></div>
+        </div>
+    </div>
+</div>
+<% } else { %>
+<div class="white-background">
+    <div class="roles-legend">
+        <div class="row">
+            <div class="col-sm-6">
+
+            </div>
+            <div class="col-sm-6">
+                <button type="button" class="btn btn-success btn-sm pull-right add-role" ><i class="fa fa-plus-circle"></i> Add New Role</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="panel-group" id="accordion">
+        <% if(models.length) { %>
+        <% _.each(models, function(model) { %>
+        <div class="panel panel-default" data-modelid="<%= model.cid %>">
+            <div class="panel-heading custom-panel-heading">
+                <a data-toggle="collapse" data-parent="#accordion" name="<%= model.get('role_name')%>" href="#<%= model.get('role_id')%>" class="row">
+                    <div class="panel-title custom-inner-heading col-xs-12"><span style=""><i class="fa fa-arrow-right"></i> <%= model.get('role_type')%></span>
+                        <button type="button" class="btn btn-danger btn-sm pull-right btn-delete margin-left-large" data-action="#policies/role/<%= model.get('role_id') %>/delete">
+                            <i class="glyphicon glyphicon-trash"></i> Delete
+                        </button>
+                        <button type="button" class="btn btn-primary btn-sm pull-right btn-policies margin-left-large" data-action="#policies/role/<%= model.get('role_id') %>/applications">
+                            <i class="fa fa-gear"></i> Policies
+                        </button>
+                        <button type="button" class="btn btn-warning btn-sm pull-right btn-actions" data-action="#policies/role/<%= model.get('role_id') %>/actions">
+                            <i class="fa fa-check"></i> Actions
+                        </button>
+                    </div>
+                </a>
+            </div>
+            <div id="<%= model.get('role_id')%>" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="panel-content"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% }); %>
+        <% } else { %>
+        <div>No Roles available.</div>
+        <% } %>
+    </div>
+</div>
+<% } %>
+

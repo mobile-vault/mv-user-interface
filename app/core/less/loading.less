@@ -1,0 +1,54 @@
+@ringFontSize: 16px;
+@ringSize:     40px;
+@ringBorder:    4px;
+@ringColor: #001678;
+
+.loading {
+  font-size: @ringFontSize;
+  background-color: transparent;
+  border-width: @ringBorder;
+  border-color:  @ringColor lighten(@ringColor, 50%)  lighten(@ringColor, 50%)  lighten(@ringColor, 50%) ;
+  border-style: solid;
+  border-top-width: (@ringBorder);
+  border-radius: @ringSize/2;
+  width: @ringSize;
+  height: @ringSize;
+  margin: 0 auto;
+  .box-sizing(border-box);
+  .animation(spin 1s infinite linear);
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spin {
+  /* Firefox */
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  /* Safari, Chrome */
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-o-keyframes spin {
+  /* Opera */
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}

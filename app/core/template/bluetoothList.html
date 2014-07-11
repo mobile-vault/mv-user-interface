@@ -1,0 +1,53 @@
+<% if (whiteListPairings) { %>
+<div class="item linked clearfix" title="<%= model.get('bluetooth_name') %>" id="whitelistItems" data-modelid = "<%= model.cid %>">
+    <div class="row">
+        <a href="#policies/bluetooth">
+            <div class="col-xs-1">
+                <input type="checkbox" name="whitelistCheckbox" value="<%= model.get('bluetooth_id') %>"/>
+            </div>
+            <div class="desc col-xs-3" style="overflow: hidden">
+                <strong><%= model.get('bluetooth_name') %></strong>
+            </div>
+            <!--<div class="col-xs-2"><%= model.get('bluetooth_cod') %></div>-->
+            <div class="col-xs-2"><%= model.get('bluetooth_uuid') %></div>
+            <div class="col-xs-4" >
+                <a href="#policies/bluetooth" class="btn btn-sm btn-default custom-button" data-action="bluetooth_edit" style="padding: 1px 5px">
+                    <i class="fa fa-pencil"></i>&nbsp;Edit
+                </a>
+                <button class="btn btn-sm btn-danger custom-button" id="whitelistDelete" data-action="bluetooth_delete">
+                    <i class="fa fa-trash-o"></i>&nbsp;Delete
+                </button>
+                <button class="btn btn-sm btn-warning custom-button" data-id="<%= model.get('bluetooth_id')%>" data-action="bluetooth_blacklist">
+                    <i class="fa fa-ban"></i>&nbsp;Blacklist
+                </button>
+            </div>
+        </a>
+    </div>
+</div>
+<% } else if(blackListPairings) { %>
+<div class="item linked clearfix" title="<%= model.get('bluetooth_name') %>" id="blacklistItems" data-modelid = "<%= model.cid %>">
+    <div class="row">
+        <a href="#policies/bluetooth">
+            <div class="col-xs-1">
+                <input type="checkbox" name="blacklistCheckbox" value="<%= model.get('bluetooth_id') %>"/>
+            </div>
+            <div class="desc col-xs-3" style="overflow: hidden">
+                <strong><%= model.get('bluetooth_name') %></strong>
+            </div>
+            <!--<div class="col-xs-2"><%= model.get('bluetooth_cod') %></div>-->
+            <div class="col-xs-2"><%= model.get('bluetooth_uuid') %></div>
+            <div class="col-xs-4" >
+                <a href="#policies/bluetooth" class="btn btn-sm btn-default custom-button" data-action="bluetooth_edit" style="padding: 1px 5px">
+                    <i class="fa fa-pencil"></i>&nbsp;Edit
+                </a>
+                <button class="btn btn-sm btn-danger custom-button" id="blacklistDelete" data-action="bluetooth_delete">
+                    <i class="fa fa-trash-o"></i>&nbsp;Delete
+                </button>
+                <button class="btn btn-sm btn-success custom-button"  data-id="<%= model.get('bluetooth_id')%>" data-action="bluetooth_whitelist">
+                    <i class="fa fa-check-square"></i>&nbsp;Whitelist
+                </button>
+            </div>
+        </a>
+    </div>
+</div>
+<% } %>

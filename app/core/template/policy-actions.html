@@ -1,0 +1,84 @@
+<div class="row page-header">
+    <div class="col-sm-4">
+        <h2 class="policies-header">Actions</h2>
+    </div>
+    <div class="col-sm-4">
+        <div class="" id="status">
+
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="pull-right object-legend"><span class="object"><i class="fa <% if(object_type === 'Company') print('fa-building-o'); else if(object_type === 'User') print ('fa-user'); else print ('fa-users'); %>"></i> <%= object_type %></span>: <span><%= name %></span></span></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">Remote Wipe <i class="fa fa-apple text-apple pull-right"></i> <i class="fa fa-android text-android pull-right"></i></h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="text-center">
+                    <button class="btn btn-danger custom-button remote-wipe"><i class="glyphicon glyphicon-remove-circle"></i> REMOTE WIPE DEVICE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">Shut Down / Reboot <i class="fa fa-android text-android pull-right"></i></h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="text-center">
+                    <button class="btn btn-warning custom-button shut-down" name="shutdown"><i class="glyphicon glyphicon-off"></i> SHUT DOWN DEVICE</button>
+                    <button class="btn btn-success custom-button reboot" name="reboot"><i class="glyphicon glyphicon-repeat"></i> REBOOT DEVICE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">Update Info <i class="fa fa-apple text-apple pull-right"></i> <i class="fa fa-android text-android pull-right"></i></h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="text-center">
+                    <button class="btn btn-info custom-button update-info" name="device_information"><i class="glyphicon glyphicon-refresh"></i> UPDATE INFO FROM DEVICE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">Clear Passcode  <i class="fa fa-apple text-apple pull-right"></i> <i class="fa fa-android text-android pull-right"></i></h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="text-center">
+                    <button class="btn btn-success custom-button clear-passcode" name="clear_passcode"><i class="fa fa-unlock"></i> CLEAR PASSCODE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container">
+            <header class="sub-policy-header">
+                <h4 class="sub-policy-heading">Device Lock <i class="fa fa-apple text-apple pull-right"></i> <i class="fa fa-android text-android pull-right"></i></h4>
+            </header>
+            <div class="sub-policy-content-container">
+                <div class="text-center">
+                    <button class="btn btn-danger custom-button device-lock" name="device_lock"><i class="fa fa-lock"></i> DEVICE LOCK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

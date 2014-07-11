@@ -1,0 +1,93 @@
+<div class="row page-header">
+    <div class="col-sm-7">
+        <h2 class="policies-header">Access Policies</h2>
+    </div>
+    <div class="col-sm-5">
+        <div class="pull-right object-legend"><span class="object"><i class="fa <% if(app.object_type === 'Company') print('fa-building-o'); else if(app.object_type === 'User') print ('fa-user'); else print ('fa-users'); %>"></i> <%= app.object_type %></span>: <span><%= app.name %></span></span></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container access-settings">
+            <div class="sub-policy-content-container">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="enable_change_settings" data-attr = "enable_change_settings" class="restriction"  <%= app.enable_change_settings.value?"checked":"" %> > Enable User to change Settings  <i class="fa fa-android text-android"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="enable_screen_capture" data-attr = "enable_screen_capture" class="restriction" <%= app.enable_screen_capture.value?"checked":"" %> > Enable User to Capture Screen <i class="fa fa-android text-android"></i> <i class="fa fa-apple text-apple"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="enable_factory_reset" data-attr = "enable_factory_reset" class="restriction" <%= app.enable_factory_reset.value?"checked":"" %>> Enable User to perform Factory Reset <i class="fa fa-android text-android"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="enable_usb_debugging" data-attr = "enable_usb_debugging" class="restriction" <%= app.enable_usb_debugging.value?"checked":"" %>> Enable User to Perform USB Debugging  <i class="fa fa-android text-android"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="enable_admin_mode" data-attr = "enable_admin_mode" class="restriction" <%= app.enable_admin_mode.value?"checked":"" %>> Enable Admin Mode<i class="fa fa-android text-android"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="allow_cloud_backup" data-attr = "allow_cloud_backup" class="restriction" <%= app.allow_cloud_backup.value?"checked":"" %>> Allow Cloud Backup  <i class="fa fa-apple text-apple"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="allow_cloud_document_sync" data-attr = "allow_cloud_document_sync" class="restriction" <%= app.allow_cloud_document_sync.value?"checked":"" %>> Allow Cloud Document Sync  <i class="fa fa-apple text-apple"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="allow_adding_game_center_friends" data-attr = "allow_adding_game_center_friends" class="restriction" <%= app.allow_adding_game_center_friends.value?"checked":"" %>> Allow Adding Game Center Friends <i class="fa fa-apple text-apple"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="allow_global_background_fetch_when_roaming" data-attr = "allow_global_background_fetch_when_roaming" class="restriction" <%= app.allow_global_background_fetch_when_roaming.value?"checked":"" %>> Allow Global Background Fetch When Roaming <i class="fa fa-apple text-apple"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="force_itunes_store_password_entry" data-attr = "force_itunes_store_password_entry" class="restriction" <%= app.force_itunes_store_password_entry.value?"checked":"" %>> Force iTunes Store Password Entry <i class="fa fa-apple text-apple"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="force_encrypted_backups" data-attr = "force_encrypted_backups" class="restriction" <%= app.force_encrypted_backups.value?"checked":"" %>> Force Encrypted Backups <i class="fa fa-apple text-apple"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="allow_multi_player_gaming" data-attr = "allow_multi_player_gaming" class="restriction" <%= app.allow_multi_player_gaming.value?"checked":"" %>> Allow Multi Player Gaming <i class="fa fa-apple text-apple"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="allow_photo_stream" data-attr = "allow_photo_stream" class="restriction" <%= app.allow_photo_stream.value?"checked":"" %>> Allow Photo Stream <i class="fa fa-apple text-apple"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="allow_voice_dialing" data-attr = "allow_voice_dialing" class="restriction" <%= app.allow_voice_dialing.value?"checked":"" %>> Allow Voice Dialing <i class="fa fa-apple text-apple"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="allow_video_conferencing" data-attr = "allow_video_conferencing" class="restriction" <%= app.allow_video_conferencing.value?"checked":"" %>> Allow FaceTime <i class="fa fa-apple text-apple"></i>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

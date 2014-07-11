@@ -1,0 +1,42 @@
+<div class="row page-header">
+    <div class="col-sm-7">
+        <h2 class=" policies-header">Hardware Policies</h2>
+    </div>
+    <div class="col-sm-5">
+        <div class="pull-right object-legend"><span class="object"><i class="fa <% if(app.object_type === 'Company') print('fa-building-o'); else if(app.object_type === 'User') print ('fa-user'); else print ('fa-users'); %>"></i> <%= app.object_type %></span>: <span><%= app.name %></span></span></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="sub-policy-container hardware-settings">
+            <div class="sub-policy-content-container">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="camera" class="restriction" data-attr = "enable_camera" <%= app.enable_camera.value?"checked":"" %>> Enable Camera  <i class="fa fa-android text-android"></i> <i class="fa fa-apple text-apple"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="external_storage_encryption" data-attr = "enable_external_storage_encryption" class="restriction" <%= app.enable_external_storage_encryption.value?"checked":"" %>> Enable External Storage Encryption <i class="fa fa-android text-android"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="internal_storage_encryption" data-attr = "enable_internal_storage_encryption" class="restriction" <%= app.enable_internal_storage_encryption.value?"checked":"" %>> Enable Internal Storage Encryption <i class="fa fa-android text-android"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="microphone" class="restriction" data-attr = "enable_microphone" <%= app.enable_microphone.value?"checked":"" %>> Enable Microphone  <i class="fa fa-android text-android"></i>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="android_beam" class="restriction" data-attr = "enable_android_beam" <%= app.enable_android_beam.value?"checked":"" %>> Enable Android Beam <i class="fa fa-android text-android"></i>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

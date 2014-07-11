@@ -1,0 +1,16 @@
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+    <label for="role" class="enroll-label">Role</label>
+    <select class="form-control input-lg" id="role" required>
+        <% _.each(roles, function(roleObj) { %>
+        <option value="<%= roleObj.role_id %>"><%= roleObj.role %></option>
+        <% }); %>
+    </select>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+    <label for="team" class="enroll-label">Team</label>
+    <select class="form-control input-lg" id="team" required>
+        <% _.each(teams, function(teamObj) { %>
+        <option value="<%= teamObj.team_id %>"><%= teamObj.team %></option>
+        <% }); %>
+    </select>
+</div>

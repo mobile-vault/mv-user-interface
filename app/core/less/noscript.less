@@ -1,0 +1,39 @@
+// Noscript Styles
+// -------------------------
+
+.no-js {
+  BODY {
+    HEADER, SECTION, FOOTER {
+      display: none !important;
+    }
+  }
+}
+
+NOSCRIPT {
+    display:block;
+    margin: auto;
+    margin-top: 15%;
+    max-width: 50%;
+    text-align: center;
+    cursor:default;
+    -webkit-user-select:none;
+     -khtml-user-select:none;
+       -moz-user-select:none;
+       -moz-user-select:-moz-none;
+       -ms-user-select: none;
+            user-select:none;
+
+    .title{
+        font-size: @font-size-base * 2.75;
+        line-height: 1em;
+        font-weight:600;
+    }
+    .subtitle{
+        font-size: @font-size-base * 1.75;
+        line-height: 1em;
+        font-weight:300;
+    }
+    .brand-image {
+        height: 36px;
+    }
+}

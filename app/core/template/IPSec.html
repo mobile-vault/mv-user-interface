@@ -1,0 +1,66 @@
+<% if(IPSecXauthPSK) { %>
+    <div class="form-group">
+        <label for="ipSecXauth_username" class="col-sm-offset-1 col-sm-3 control-label">Username: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="ipSecXauth_username" name="ipSecXauth_username" placeholder="Username">
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="ipSecXauth_password" class="col-sm-offset-1 col-sm-3 control-label">Password: </label>
+        <div class="col-sm-4">
+            <input type="password" class="form-control" id="ipSecXauth_password" name="ipSecXauth_password" placeholder="Password">
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="ipSecXauthID" class="col-sm-offset-1 col-sm-3 control-label">IPSec Identifier: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="ipSecXauthID" placeholder="Not Used">
+        </div>
+    </div>
+    <div class="form-group" id="preSharedKeyDiv">
+        <label for="ipSecXauthKey" class="col-sm-offset-1 col-sm-3 control-label">IPSec Pre-Shared Key: </label>
+        <div class="col-sm-4">
+            <input type="password" class="form-control" id="ipSecXauthKey" placeholder="IPSec Pre-Shared Key">
+            <span class="display-none" id="preSharedKeyError"></span>
+        </div>
+    </div>
+
+<% } else if(IPSecXauthRSA) { %>
+
+    <div class="form-group">
+        <label for="xAuthUserCertificate" class="col-sm-offset-1 col-sm-3 control-label">IPSec User Certificate: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="xAuthUserCertificate" placeholder="(Unspecified)">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="xAuthCACertificate" class="col-sm-offset-1 col-sm-3 control-label">IPSec CA Certificate: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="xAuthCACertificate" placeholder="Do Not Verify Server">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="xAuthServerCertificate" class="col-sm-offset-1 col-sm-3 control-label">IPSec Server Certificate: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="xAuthServerCertificate" placeholder="Received from server">
+        </div>
+    </div>
+
+<% } else if(IPSecHybridRSA) { %>
+
+    <div class="form-group">
+        <label for="hybridCACertificate" class="col-sm-offset-1 col-sm-3 control-label">IPSec CA Certificate: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="hybridCACertificate" placeholder="Do Not Verify Server">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="hybridServerCertificate" class="col-sm-offset-1 col-sm-3 control-label">IPSec Server Certificate: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="hybridServerCertificate" placeholder="Received from server">
+        </div>
+    </div>
+
+<% } %>

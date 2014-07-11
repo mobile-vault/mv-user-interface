@@ -1,0 +1,50 @@
+<div class="item linked clearfix" title="<%= model.get('user_name') %>" data-modelid="<%= model.cid %>">
+    <div class="row">
+        <a href="#policies/user/<%= model.get('user_id') %>/applications">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                <input type="checkbox" name="checkbox" value="<%= model.get('user_id') %>"/>
+            </div>
+            <div class="desc col-lg-2 col-md-2 col-sm-2 col-xs-2" style="overflow: hidden">
+                <strong><%= model.get('user_name') %></strong>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><%= model.get('user_role') %></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><%= model.get('user_team') %></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                <% if(model.get('user_device_os') === null)
+                {
+                print('');
+                }
+                else { %>
+                <i class="device-os fa fa-<%=model.get('user_device_os') === 'ios'?'apple text-apple':'android text-android'%>"></i>
+                <% } %>
+                <span>&nbsp;</span>
+                <% if(model.get('user_device') === null)
+                {
+                print('Pending...');
+                }
+                else { %>
+                <%= model.get('user_device') %>
+                <% } %>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" >
+                <button class="btn btn-sm btn-default" id="editUser" data-action="user_edit" data-toggle="modal" data-target="#edit-user">
+                    <i class="fa fa-pencil"></i>&nbsp;Edit
+                </button>
+                <button class="btn btn-sm btn-danger"  name="deleteUser" data-action="#policies/user/<%= model.get('user_id') %>/delete">
+                    <i class="fa fa-trash-o"></i>&nbsp;Delete
+                </button>
+                <% if(model.get('user_device') === null)
+                {
+                }
+                else { %>
+                <button class="btn btn-sm btn-primary" name="user-policy" data-action="#policies/user/<%= model.get('user_id') %>/applications" data-target="#policies">
+                    <i class="fa fa-gear"></i>&nbsp;Policies
+                </button>
+                <button class="btn btn-sm btn-warning"  name="userActions" data-action="#policies/user/<%= model.get('user_id') %>/actions">
+                    <i class="fa fa-check"></i>&nbsp;Actions
+                </button>
+                <% } %>
+            </div>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+<% if(PPTP) { %>
+    <div class="form-group">
+        <label for="pptp_username" class="col-sm-offset-1 col-sm-3 control-label">Username: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="pptp_username" name="pptp_username" placeholder="Username">
+
+        </div>
+    </div>
+<div class="form-group">
+        <label for="pptp_password" class="col-sm-offset-1 col-sm-3 control-label">Password: </label>
+        <div class="col-sm-4">
+            <input type="password" class="form-control" id="pptp_password" name="pptp_password" placeholder="Password">
+
+        </div>
+    </div>
+    <div class="form-group no-margin-bottom">
+
+        <div class="col-sm-offset-5 col-sm-4">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="pppEncryption" checked> PPP encryption(MPPE)
+                </label>
+            </div>
+        </div>
+    </div>
+
+<% } else if(IPSecPSK) { %>
+    <div class="form-group">
+        <label for="l2tp_psk_username" class="col-sm-offset-1 col-sm-3 control-label">Username: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="l2tp_psk_username" name="l2tp_psk_username" placeholder="Username">
+
+        </div>
+    </div>
+<div class="form-group">
+        <label for="l2tp_psk_password" class="col-sm-offset-1 col-sm-3 control-label">Password: </label>
+        <div class="col-sm-4">
+            <input type="password" class="form-control" id="l2tp_psk_password" name="l2tp_psk_password" placeholder="Password">
+
+        </div>
+    </div>
+    <div class="form-group l2TPSecretDiv">
+
+        <label for="l2tpSecretPSK" class="col-sm-offset-1 col-sm-3 control-label">L2TP Secret: </label>
+        <div class="col-sm-4">
+            <input type="password" class="form-control" id="l2tpSecretPSK" placeholder="Not Used">
+            <span class="display-none l2tpError"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="ipSecID" class="col-sm-offset-1 col-sm-3 control-label">IPSec Identifier: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="ipSecID" placeholder="Not Used">
+        </div>
+    </div>
+    <div class="form-group" id="preSharedKeyDiv">
+        <label for="ipSecKey" class="col-sm-offset-1 col-sm-3 control-label">IPSec Pre-Shared Key: </label>
+        <div class="col-sm-4">
+            <input type="password" class="form-control" id="ipSecKey" placeholder="IPSec Pre-Shared Key">
+            <span class="display-none" id="preSharedKeyError"></span>
+        </div>
+    </div>
+
+<% } else if(IPSecRSA) {%>
+
+    <div class="form-group l2TPSecretDiv">
+        <label for="l2tpSecretRSA" class="col-sm-offset-1 col-sm-3 control-label">L2TP Secret: </label>
+        <div class="col-sm-4">
+            <input type="password" class="form-control" id="l2tpSecretRSA" placeholder="Not Used">
+            <span class="display-none l2tpError"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="ipSecUserCertificate" class="col-sm-offset-1 col-sm-3 control-label">IPSec User Certificate: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="ipSecUserCertificate" placeholder="(Unspecified)">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="ipSecCACertificate" class="col-sm-offset-1 col-sm-3 control-label">IPSec CA Certificate: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="ipSecCACertificate" placeholder="Do Not Verify Server">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="ipSecServerCertificate" class="col-sm-offset-1 col-sm-3 control-label">IPSec Server Certificate: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="ipSecServerCertificate" placeholder="Received from server">
+        </div>
+    </div>
+
+<% } %>
